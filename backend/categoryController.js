@@ -1,4 +1,4 @@
-// categoryController.js — Manage predefined and custom expense categories
+// Manage predefined and custom expense categories
 
 const Category = require('./Category');
 
