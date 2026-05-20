@@ -1,4 +1,4 @@
-// controllers/authController.js — Handles register & login logic
+// Handles register & login logic
 
 const User = require('./User');
 const Category = require('./Category');
