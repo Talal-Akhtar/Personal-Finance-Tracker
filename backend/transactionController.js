@@ -1,4 +1,4 @@
-// controllers/transactionController.js — Handles transaction CRUD logic
+// Handles transaction CRUD logic
 
 const Transaction = require('./Transaction');
 
