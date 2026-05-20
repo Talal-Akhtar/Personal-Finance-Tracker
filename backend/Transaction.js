@@ -1,4 +1,4 @@
-// models/Transaction.js — Defines the shape of a transaction in the database
+// Defines the shape of a transaction in the database
 
 const mongoose = require('mongoose');
 
