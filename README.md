@@ -235,16 +235,3 @@ Response 200:
 | Database  | MongoDB, Mongoose  |
 | Auth      | JWT, bcryptjs      |
 
----
-
-## 🚀 What to Improve in V2
-
-Here are ideas for your next version:
-- [ ] Add React Router for proper URL-based navigation
-- [ ] Add transaction categories (food, transport, etc.)
-- [ ] Add date filtering / search
-- [ ] Add charts (recharts or chart.js)
-- [ ] Add Redux or React Context for state management
-- [ ] Add input validation with a library (e.g. Joi on backend, react-hook-form on frontend)
-- [ ] Add refresh tokens for better security
-- [ ] Deploy backend to Railway/Render, frontend to Vercel
