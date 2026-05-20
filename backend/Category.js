@@ -1,4 +1,4 @@
-// models/Category.js — Stores user-defined and global category names
+// Stores user-defined and global category names
 
 const mongoose = require('mongoose');
 
