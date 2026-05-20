@@ -807,3 +807,11 @@ button, input, select, textarea { font: inherit; }
 .auth-footer a:hover {
   text-decoration: underline;
 }
+
+.auth-card .auth-title {
+  margin-bottom: 4px;
+}
+
+.auth-card .auth-subtitle {
+  margin-top: 0;
+}
