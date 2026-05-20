@@ -1,4 +1,4 @@
-// server.js — Entry point of the app
+// Entry point of the app
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -10,10 +10,8 @@ const app = express();
 
 // ─── Middleware ───────────────────────────────────────────────────────────────
 
-// Allow requests from frontend (React dev server runs on port 3000)
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
-// Parse incoming JSON request bodies
 app.use(express.json());
 
 // ─── Routes ──────────────────────────────────────────────────────────────────
