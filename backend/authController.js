@@ -14,7 +14,6 @@ const generateToken = (userId) => {
 };
 
 // ─── REGISTER ─────────────────────────────────────────────────────────────────
-// POST /api/auth/register
 const register = async (req, res, next) => {
   const { name, email, password } = req.body;
 
@@ -30,7 +29,6 @@ const register = async (req, res, next) => {
       return res.status(400).json({ message: 'Email already registered' });
     }
 
-    // Hash the password before saving (never store plain text passwords!)
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -41,7 +39,6 @@ const register = async (req, res, next) => {
       password: hashedPassword,
     });
 
-    // Return the token + basic user info
     res.status(201).json({
       message: 'User registered successfully',
       token: generateToken(user._id),
@@ -53,7 +50,6 @@ const register = async (req, res, next) => {
 };
 
 // ─── LOGIN ────────────────────────────────────────────────────────────────────
-// POST /api/auth/login
 const login = async (req, res, next) => {
   const { email, password } = req.body;
 
@@ -62,7 +58,6 @@ const login = async (req, res, next) => {
   }
 
   try {
-    // Find user by email
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({ message: 'Invalid email or password' });
@@ -74,7 +69,6 @@ const login = async (req, res, next) => {
       return res.status(400).json({ message: 'Invalid email or password' });
     }
 
-    // Return token + user info on success
     res.json({
       message: 'Login successful',
       token: generateToken(user._id),
