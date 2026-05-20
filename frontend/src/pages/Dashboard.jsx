@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import {
   getTransactions,
@@ -145,7 +144,6 @@ function Dashboard({ user, onLogout, darkMode, onToggleTheme }) {
   const balance      = analytics.totals.balance  || 0;
   const expenseChange = analytics.insights.expenseChangePercent;
 
-  /* ─── Avatar initials ─────────────────────────────────────── */
   const initials = user.name
     ? user.name.split(' ').map((n) => n[0]).slice(0, 2).join('').toUpperCase()
     : 'U';
@@ -305,7 +303,7 @@ function Dashboard({ user, onLogout, darkMode, onToggleTheme }) {
         {/* ── Main Split ──────────────────────────────────────── */}
         <div className="split-panel">
 
-          {/* Left column */}
+          {/* Left column — Transaction form + list */}
           <div className="left-panel">
 
             {/* Add Transaction */}
@@ -362,21 +360,8 @@ function Dashboard({ user, onLogout, darkMode, onToggleTheme }) {
 
           </div>
 
-          {/* Right column */}
+          {/* Right column — Category manager only */}
           <div className="right-panel">
-
-            {/* Analytics */}
-            <div className="panel">
-              <div className="panel-header">
-                <span className="panel-title">Analytics</span>
-              </div>
-              <div className="panel-body">
-                <AnalyticsCharts
-                  categoryBreakdown={analytics.categoryBreakdown}
-                  monthlyReport={analytics.monthlyReport}
-                />
-              </div>
-            </div>
 
             {/* Category Manager */}
             <div className="panel category-manager">
@@ -418,6 +403,22 @@ function Dashboard({ user, onLogout, darkMode, onToggleTheme }) {
               </div>
             </div>
 
+          </div>
+        </div>
+
+        {/* ── Analytics — full width below split ──────────────── */}
+        <div className="panel">
+          <div className="panel-header">
+            <span className="panel-title">Analytics</span>
+            <span style={{ fontSize: 12, color: 'var(--text-tertiary)' }}>
+              Category breakdown &amp; monthly trends
+            </span>
+          </div>
+          <div className="panel-body">
+            <AnalyticsCharts
+              categoryBreakdown={analytics.categoryBreakdown}
+              monthlyReport={analytics.monthlyReport}
+            />
           </div>
         </div>
 
